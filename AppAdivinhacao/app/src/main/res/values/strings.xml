@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ExemploActivity</string>
+    <string name="lbl_Button"> Submeter </string>
+    <string name="lbl_Hello"> Tente adivinhar o número!</string>
+    <string name="str_rsp1">Você acertou! Parabéns!!</string>
+    <string name="str_rsp2">Você errou! Tente novamente!!</string>
+
+    <string name="str_rsp3">O número correto é: %1$S</string>
+</resources>
