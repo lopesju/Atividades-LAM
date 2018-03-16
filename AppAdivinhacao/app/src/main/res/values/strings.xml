@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">ExemploActivity</string>
+    <string name="app_name">Jogo de Adivinhação</string>
     <string name="lbl_Button"> Submeter </string>
     <string name="lbl_Hello"> Tente adivinhar o número!</string>
-    <string name="str_rsp1">Você acertou! Parabéns!!</string>
-    <string name="str_rsp2">Você errou! Tente novamente!!</string>
-
-    <string name="str_rsp3">O número correto é: %1$S</string>
+    <string name="str_rsp1">Você acertou! Parabéns!!>O número correto é: %1$</string>
+    <string name="str_rsp2">Você errou! Tente novamente. Você ainda tem mais %1$S tentativas!!</string>
+    <string name="str_rsp3">Você perdeu!O número correto é: %1$S</string>
 </resources>

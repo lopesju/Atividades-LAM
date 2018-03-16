@@ -9,17 +9,16 @@
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginBottom="52dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/lbl_Hello"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        app:layout_constraintBottom_toTopOf="@+id/resultado"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.319" />
 
     <Button
         android:id="@+id/button"
@@ -56,8 +55,8 @@
         android:textColor="@android:color/holo_green_dark"
         android:textStyle="bold"
         android:typeface="monospace"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="24dp" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="2dp" />
 
     <TextView
         android:id="@+id/resultado"
