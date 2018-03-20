@@ -25,7 +25,8 @@ public class PessoaAdapter extends BaseAdapter{
         return lista.size();
     }
     @Override
-    public Object getItem(int position){
+    public Object getItem(int position)
+    {
         return lista.get(position);
     }
     @Override
