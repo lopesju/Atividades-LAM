@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         String oNome = nome.getText().toString();
         if (oNome.matches("")) {
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "É preciso digitar um nome...", Toast.LENGTH_SHORT);
+                    "É necessário digitar um nome...", Toast.LENGTH_SHORT);
             toast.show();
             return;
         }
