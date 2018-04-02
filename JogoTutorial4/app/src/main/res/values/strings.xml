@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SharedPreferences</string>
+    <string name="str_msg">Digite um número de 1 a 1000</string>
+    <string name="str_rsp1">Você errou! Tente novamente!!</string>
+    <string name="str_rsp2">Você acertou! Parabéns!! Você gastou %1$ tentativas! </string>
+</resources>
