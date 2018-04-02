@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.app.PendingIntent.getActivity;
@@ -23,22 +24,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void salvar(View v) {
         SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
-        String oValor = valor.getText().toString();
-        if(oValor.matches("")) {
+        String texto = valor.getText().toString();
+        if(texto.matches("")) {
             Toast toast = Toast.makeText(MainActivity.this,
                     "Digite algo...", Toast.LENGTH_SHORT);
             toast.show();
             return;
         }
         SharedPreferences.Editor editor = arquivo.edit();
-        editor.putString("valor",oValor);
+        editor.putString("valor",texto);
         editor.commit();
+        valor.setText("");
     }
 
     public void carregar(View v) {
         SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
-        String oValor = arquivo.getString("valor","Nada...");
-        valor.setText(oValor);
-        Log.i("oValor: ",oValor);
+        String texto = arquivo.getString("valor","Nada...");
+        valor.setText(texto);
+        Log.i("oValor: ",texto);
     }
 }
