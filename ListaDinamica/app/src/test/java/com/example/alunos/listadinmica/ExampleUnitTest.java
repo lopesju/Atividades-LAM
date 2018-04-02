@@ -1,4 +1,4 @@
-package com.example.alunos.listadinamica;
+package com.example.alunos.listadinmica;
 
 import org.junit.Test;
 

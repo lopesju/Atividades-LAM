@@ -1,4 +1,4 @@
-package com.example.alunos.listadinamica.adapter;
+package com.example.alunos.listadinmica.adapter;
 
 import android.app.Activity;
 import android.view.View;
@@ -7,26 +7,26 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.alunos.listadinamica.R;
-import com.example.alunos.listadinamica.model.Pessoa;
+import com.example.alunos.listadinmica.R;
+import com.example.alunos.listadinmica.model.Pessoa;
+
 import java.util.List;
 
-public class PessoaAdapter extends BaseAdapter{
+public class PessoaAdapter extends BaseAdapter {
+
     private Activity atividade;
     private List<Pessoa> lista;
 
-    public PessoaAdapter(Activity atividade, List<Pessoa> Lista){
+    public PessoaAdapter(Activity atividade,List<Pessoa> lista){
         this.atividade = atividade;
         this.lista = lista;
     }
-
     @Override
     public int getCount(){
         return lista.size();
     }
     @Override
-    public Object getItem(int position)
-    {
+    public Object getItem(int position){
         return lista.get(position);
     }
     @Override
@@ -36,18 +36,18 @@ public class PessoaAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         Pessoa obj = lista.get(position);
-        View v = atividade.getLayoutInflater().inflate(R.layout.row_layout, parent, false);
 
-        TextView textNome = v.findViewById(R.id.rtl_nome);
-        textNome.setText(obj.getNome());
+        View v = atividade.getLayoutInflater().inflate(R.layout.row_layout,parent,false);
 
-        TextView textTelefone = v.findViewById(R.id.rtl_telefone);
-        textNome.setText(obj.getTelefone());
+        TextView textnome = v.findViewById(R.id.lblFirst);
+        textnome.setText(obj.getNome());
 
-        ImageView imgImagem = v.findViewById(R.id.imageView);
+        TextView textTelefone = v.findViewById(R.id.lblSecond);
+        textTelefone.setText(obj.getTelefone());
+
+        ImageView imgImagem = v.findViewById(R.id.imgImagem);
         imgImagem.setImageResource(obj.getImagem());
 
         return v;
-
     }
 }
