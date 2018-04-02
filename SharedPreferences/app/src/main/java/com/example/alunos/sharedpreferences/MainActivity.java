@@ -1,4 +1,4 @@
-package com.example.lw.sharedpreferences;
+package com.example.alunos.sharedpreferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import static android.app.PendingIntent.getActivity;
 
-
 public class MainActivity extends AppCompatActivity {
 
     EditText valor;
@@ -22,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
         valor = (EditText) findViewById(R.id.txtValor);
     }
 
-    public void salvar(View v){
+    public void salvar(View v) {
         SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
         String oValor = valor.getText().toString();
-        if (oValor.matches("")){
-            Toast toast = Toast.makeText(MainActivity.this,"Digite algo ...",Toast.LENGTH_SHORT);
+        if(oValor.matches("")) {
+            Toast toast = Toast.makeText(MainActivity.this,
+                    "Digite algo...", Toast.LENGTH_SHORT);
             toast.show();
             return;
         }
@@ -35,12 +35,10 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    public void carregar(View v){
+    public void carregar(View v) {
         SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
         String oValor = arquivo.getString("valor","Nada...");
         valor.setText(oValor);
         Log.i("oValor: ",oValor);
     }
-
-
 }

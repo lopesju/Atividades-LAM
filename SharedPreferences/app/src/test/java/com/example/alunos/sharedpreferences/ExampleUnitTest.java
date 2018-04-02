@@ -1,4 +1,4 @@
-package com.example.lw.sharedpreferences;
+package com.example.alunos.sharedpreferences;
 
 import org.junit.Test;
 
