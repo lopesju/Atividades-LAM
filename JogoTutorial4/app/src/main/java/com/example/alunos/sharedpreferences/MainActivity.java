@@ -1,5 +1,6 @@
 package com.example.alunos.sharedpreferences;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -39,34 +40,37 @@ public class MainActivity extends AppCompatActivity {
             t++;
             resposta.setText("O número é menor");
             userInput.setText("");
-        } else if(nDigitado < nSort) {
+        } else if (nDigitado < nSort) {
             t++;
             resposta.setText("O número é maior");
             userInput.setText("");
-        }else{
+        } else {
             t++;
             String tent = Integer.toString(t);
             resposta.setText(String.format("Você acertou! Parabéns!! Você gastou %1$s tentativas", tent));
             userInput.setText("");
-            Log.d("msg:","entrou aqui");
+            Log.d("msg:", "entrou aqui");
         }
 
     }
+
+    public void salvar(View v) {
+        TextView resposta = findViewById(R.id.resposta);
+        SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
+        String tentativas = Integer.toString(t);
+        String texto = tentativas;
+        if (texto.matches("")) {
+            Toast toast = Toast.makeText(MainActivity.this,
+                    "Digite algo...", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+        SharedPreferences.Editor editor = arquivo.edit();
+        editor.putString("tentativas", texto);
+        editor.commit();
+        resposta.setText("Salvo!");
+    }
 }
-    //public void salvar(View v) {
-       // SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
-       // String texto = valor.getText().toString();
-      //  if(texto.matches("")) {
-        //    Toast toast = Toast.makeText(MainActivity.this,
-          //          "Digite algo...", Toast.LENGTH_SHORT);
-            //toast.show();
-            //return;
-        //}
-        //SharedPreferences.Editor editor = arquivo.edit();
-        //editor.putString("valor",texto);
-        //editor.commit();
-        //valor.setText("");
-    //}
 
     //public void carregar(View v) {
         //SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);

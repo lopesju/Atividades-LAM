@@ -47,14 +47,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="carregar"
-        android:text="Carregar"
+        android:onClick="salvar"
+        android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numero"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintVertical_bias="0.758" />
 
     <Button
         android:id="@+id/button2"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numero"
-        app:layout_constraintVertical_bias="0.742" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <TextView
         android:id="@+id/resposta"
