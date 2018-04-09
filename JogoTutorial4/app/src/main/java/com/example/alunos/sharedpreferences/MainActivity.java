@@ -2,6 +2,7 @@ package com.example.alunos.sharedpreferences;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -49,28 +50,36 @@ public class MainActivity extends AppCompatActivity {
             String tent = Integer.toString(t);
             resposta.setText(String.format("Você acertou! Parabéns!! Você gastou %1$s tentativas", tent));
             userInput.setText("");
-            Log.d("msg:", "entrou aqui");
+            SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
+            String tentativas = Integer.toString(t);
+            String texto = tentativas;
+            if (texto.matches("")) {
+                Toast toast = Toast.makeText(MainActivity.this,
+                        "Digite algo...", Toast.LENGTH_SHORT);
+                toast.show();
+                return;
+            }
+            SharedPreferences.Editor editor = arquivo.edit();
+            editor.putString("tentativas", texto);
+            editor.commit();
+            //Log.d("msg:", "entrou aqui");
         }
 
     }
 
-    public void salvar(View v) {
-        TextView resposta = findViewById(R.id.resposta);
-        SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
+    public void carregaPlacar(View v){
         String tentativas = Integer.toString(t);
-        String texto = tentativas;
-        if (texto.matches("")) {
-            Toast toast = Toast.makeText(MainActivity.this,
-                    "Digite algo...", Toast.LENGTH_SHORT);
-            toast.show();
-            return;
-        }
-        SharedPreferences.Editor editor = arquivo.edit();
-        editor.putString("tentativas", texto);
-        editor.commit();
-        resposta.setText("Salvo!");
+        //String texto = tentativas;
+        Intent i = new Intent(MainActivity.this, Placar.class);
+        SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
+        String texto = arquivo.getString("tentativas","Nada...");
+        Log.i("tentativas: ",texto);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("tentativas", texto);
+        i.putExtras(bundle);
+        startActivity(i);
     }
-}
 
     //public void carregar(View v) {
         //SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
@@ -78,4 +87,4 @@ public class MainActivity extends AppCompatActivity {
         //valor.setText(texto);
         //Log.i("oValor: ",texto);
     //}
-//}
+}
