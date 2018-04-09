@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
             userInput.setText("");
         }else{
             t++;
-            resposta.setText(getResources().getString(R.string.str_rsp2, t).toString());
+            String tent = Integer.toString(t);
+            resposta.setText(String.format("Você acertou! Parabéns!! Você gastou %1$s tentativas", tent));
             userInput.setText("");
             Log.d("msg:","entrou aqui");
         }
