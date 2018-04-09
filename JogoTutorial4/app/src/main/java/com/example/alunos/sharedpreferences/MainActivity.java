@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Random r = new Random();
         t = 0;
-        nSort = r.nextInt(1000) + 1;
+        nSort = r.nextInt(10) + 1;
         valor = (EditText) findViewById(R.id.numero);
     }
 
@@ -33,18 +33,23 @@ public class MainActivity extends AppCompatActivity {
         EditText userInput = findViewById(R.id.numero);
         String num = userInput.getText().toString();
         int nDigitado = Integer.parseInt(num);
-        TextView resposta = findViewById(R.id.mensagem);
+        TextView resposta = findViewById(R.id.resposta);
 
-        while (nSort != nDigitado) {
+        if (nDigitado > nSort) {
             t++;
-            if (nDigitado > nSort) {
-                resposta.setText("O número é menor");
-            } else {
-                resposta.setText("O número é maior");
-            }
+            resposta.setText("O número é menor");
             userInput.setText("");
+        } else if(nDigitado < nSort) {
+            t++;
+            resposta.setText("O número é maior");
+            userInput.setText("");
+        }else{
+            t++;
+            resposta.setText(getResources().getString(R.string.str_rsp2, t).toString());
+            userInput.setText("");
+            Log.d("msg:","entrou aqui");
         }
-        resposta.setText(getResources().getString(R.string.str_rsp2, t).toString());
+
     }
 }
     //public void salvar(View v) {
