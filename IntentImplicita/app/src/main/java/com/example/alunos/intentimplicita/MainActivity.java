@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
         String aUrl = url.getText().toString();
         if (aUrl.matches("")) {
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "Digite um endereço web...", Toast.LENGTH_SHORT);
+                    "Digite um endereço web válido...", Toast.LENGTH_SHORT);
             toast.show();
             return;
         } else if (aUrl.indexOf("http://")!=0){
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "Digite um endereço web válido. Utilize http://", Toast.LENGTH_SHORT);
+                    "Digite um endereço web válido. Não se esqueça de utilizar http://", Toast.LENGTH_SHORT);
             toast.show();
             return;
         }
