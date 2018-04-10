@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Intent Implicita</string>
-    <string name="str_msg">Digite um endereço web:</string>
-    <string name="str_msg2">http:www.endereço.com</string>
+    <string name="app_name">IntentImplicita</string>
+    <string name="str_msg">Digite um endereço web</string>
 </resources>
