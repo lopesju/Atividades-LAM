@@ -1,8 +1,8 @@
 package com.example.alunos.listadinmica;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -11,12 +11,12 @@ import com.example.alunos.listadinmica.model.Pessoa;
 
 import java.util.ArrayList;
 
-public class mostrarListaDinamica extends AppCompatActivity {
+public class ListaDinamica extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mostrar_lista_dinamica);
+        setContentView(R.layout.activity_lista_dinamica);
 
         ListView listview = findViewById(R.id.listview);
 
@@ -25,7 +25,7 @@ public class mostrarListaDinamica extends AppCompatActivity {
 
         try{
             ArrayList<Pessoa> lista = bundle.getParcelableArrayList("contatos");
-            PessoaAdapter adapter = new PessoaAdapter(mostrarListaDinamica.this,lista);
+            PessoaAdapter adapter = new PessoaAdapter(ListaDinamica.this,lista);
             listview.setAdapter(adapter);
         }catch (Exception e){
             Log.d(e.getClass().toString(),e.getMessage());

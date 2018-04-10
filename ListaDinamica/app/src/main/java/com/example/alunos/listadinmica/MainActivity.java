@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mostrarLista(View v) {
-        Intent it = new Intent(this, mostrarListaDinamica.class);
+        Intent it = new Intent(this, ListaDinamica.class);
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("contatos",lista);
         it.putExtras(bundle);
