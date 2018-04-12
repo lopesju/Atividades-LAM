@@ -81,6 +81,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+
+    public void reiniciar(View v) {
+        setContentView(R.layout.activity_main);
+        Random r = new Random();
+        t = 0;
+        nSort = r.nextInt(10) + 1;
+        valor = (EditText) findViewById(R.id.numero);
+
+    }
+
     //public void carregar(View v) {
         //SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
         //String texto = arquivo.getString("valor","Nada...");

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JogoTutorial4.iml" filepath="$PROJECT_DIR$/JogoTutorial4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JogoTutorial4.iml" filepath="$PROJECT_DIR$/JogoTutorial4.iml" />
       <module fileurl="file://$PROJECT_DIR$/SharedPreferences.iml" filepath="$PROJECT_DIR$/SharedPreferences.iml" />
       <module fileurl="file://$PROJECT_DIR$/SharedPreferences2.iml" filepath="$PROJECT_DIR$/SharedPreferences2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
