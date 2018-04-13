@@ -2,5 +2,9 @@
     <string name="app_name">Jogo Modificado</string>
     <string name="str_msg">Digite um número de 1 a 1000</string>
     <string name="str_rsp2">Você acertou! Parabéns!! Você gastou %1$s tentativas! </string>
-    <string name="hello">Placar, %s! </string>
+    <string name="placar1">%s! </string>
+    <string name="placar2">%s! </string>
+    <string name="placar3">%s! </string>
+    <string name="placar4">%s! </string>
+    <string name="placar5">%s! </string>
 </resources>

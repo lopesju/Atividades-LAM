@@ -25,10 +25,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
         Random r = new Random();
         t = 0;
         nSort = r.nextInt(10) + 1;
         valor = (EditText) findViewById(R.id.numero);
+
+        SharedPreferences.Editor editor = arquivo.edit();
+        editor.putString("placar1","");
+        editor.putString("placar2","");
+        editor.putString("placar3","");
+        editor.putString("placar4","");
+        editor.putString("placar5","");
+        editor.commit();
+
     }
 
     public void jogar(View v) {
@@ -50,18 +60,25 @@ public class MainActivity extends AppCompatActivity {
             String tent = Integer.toString(t);
             resposta.setText(String.format("Você acertou! Parabéns!! Você gastou %1$s tentativas", tent));
             userInput.setText("");
-            SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
             String tentativas = Integer.toString(t);
             String texto = tentativas;
-            if (texto.matches("")) {
-                Toast toast = Toast.makeText(MainActivity.this,
-                        "Digite algo...", Toast.LENGTH_SHORT);
-                toast.show();
-                return;
-            }
+            SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = arquivo.edit();
-            editor.putString("tentativas", texto);
+            editor.putString("placar5",arquivo.getString("placar4","Não tem nada"));
+            editor.putString("placar4",arquivo.getString("placar3","Não tem nada"));
+            editor.putString("placar3",arquivo.getString("placar2","Não tem nada"));
+            editor.putString("placar2",arquivo.getString("placar1","Não tem nada"));
+            editor.putString("placar1",t+"");
             editor.commit();
+
+           // if (texto.matches("")) {
+            //    Toast toast = Toast.makeText(MainActivity.this,
+            //            "Digite algo...", Toast.LENGTH_SHORT);
+//            //    return;
+          //  }
+            //SharedPreferences.Editor editor = arquivo.edit();
+           // editor.putString("tentativas", texto);
+            //editor.commit();
             //Log.d("msg:", "entrou aqui");
         }
 
@@ -72,11 +89,17 @@ public class MainActivity extends AppCompatActivity {
         //String texto = tentativas;
         Intent i = new Intent(MainActivity.this, Placar.class);
         SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
+
         String texto = arquivo.getString("tentativas","Nada...");
         Log.i("tentativas: ",texto);
 
         Bundle bundle = new Bundle();
-        bundle.putString("tentativas", texto);
+        bundle.putString("placar5", arquivo.getString("placar5","Não tem carregarPlacar"));
+        bundle.putString("placar4", arquivo.getString("placar4","Não tem carregarPlacar"));
+        bundle.putString("placar3", arquivo.getString("placar3","Não tem carregarPlacar"));
+        bundle.putString("placar2", arquivo.getString("placar2","Não tem carregarPlacar"));
+        bundle.putString("placar1", arquivo.getString("placar1","Não tem carregarPlacar"));
+
         i.putExtras(bundle);
         startActivity(i);
     }
