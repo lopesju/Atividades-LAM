@@ -38,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
                 resposta.setText(getResources().getString(R.string.str_rsp3,nSort).toString());
             }
     }
-
+    public void reiniciar(View v){
+        setContentView(R.layout.activity_main);
+        Random r = new Random();
+        t = 3;
+        nSort = r.nextInt(10) + 1;
+    }
 }
 
