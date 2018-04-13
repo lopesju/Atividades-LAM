@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences arquivo = getPreferences(Context.MODE_PRIVATE);
         Random r = new Random();
         t = 0;
-        nSort = r.nextInt(10) + 1;
+        nSort = r.nextInt(1000) + 1;
         valor = (EditText) findViewById(R.id.numero);
 
         SharedPreferences.Editor editor = arquivo.edit();
