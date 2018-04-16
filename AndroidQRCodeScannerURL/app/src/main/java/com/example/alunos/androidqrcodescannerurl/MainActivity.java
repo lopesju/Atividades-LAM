@@ -1,3 +1,5 @@
+//Júlia Lopes Olivier
+
 package com.example.alunos.androidqrcodescannerurl;
 
 import android.content.Intent;
@@ -15,6 +17,8 @@ import com.google.zxing.integration.android.IntentResult;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static java.lang.Boolean.FALSE;
 
 
 public class MainActivity extends AppCompatActivity
@@ -52,14 +56,13 @@ public class MainActivity extends AppCompatActivity
             }else {
                 try{
                     String string = result.getContents();
-                    if((string.indexOf("http://www")!=0) && (string.indexOf(".com")!=0)){
+                    if((string.startsWith("http")!=FALSE)){
                         Intent intencao = new Intent(Intent.ACTION_VIEW, Uri.parse(string.toLowerCase()));
                         startActivity(intencao);
-                    } else {
+                    }else{
                         JSONObject obj = new JSONObject(result.getContents());
                         lblName.setText(obj.getString("name"));
                         lblAddress.setText(obj.getString("address"));
-                        lblUrl.setText(obj.getString("url"));
                     }
                 }catch (JSONException e){
                     e.printStackTrace();
