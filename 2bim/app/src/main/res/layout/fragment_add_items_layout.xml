@@ -33,6 +33,6 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:menu="@menu/menu_navegation"
+        app:menu="@menu/menu_navigation"
         app:layout_gravity="start" />
 </android.support.v4.widget.DrawerLayout>
