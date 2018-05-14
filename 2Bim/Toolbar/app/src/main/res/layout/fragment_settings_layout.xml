@@ -25,6 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Configurando"
+                android:textSize="24sp" />
         </FrameLayout>
 
     </LinearLayout>
@@ -34,5 +40,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:menu="@menu/menu_navigation"
-        app:layout_gravity="start" />
+        android:layout_gravity="start" />
 </android.support.v4.widget.DrawerLayout>

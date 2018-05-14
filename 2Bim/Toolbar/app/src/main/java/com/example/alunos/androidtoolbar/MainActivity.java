@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         configureNavigationDrawer();
         configureToolbar();
-        Fragmente f = new ViewItensFragment();
+        Fragment f = new ViewItensFragment();
         FragmentTransaction transaction =
                 getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame, f);
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        if(actionbar != null){
+        if(actionBar != null){
             actionBar.setHomeAsUpIndicator(R.mipmap.ic_launcher_round);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         navView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
 
                         Fragment f = null;
                         int itemId = menuItem.getItemId();
@@ -63,13 +63,12 @@ public class MainActivity extends AppCompatActivity {
                                     getSupportFragmentManager().beginTransaction();
                             transaction.replace(R.id.frame,f);
                             transaction.commit();
-                            drawerLayout.closeDrawer();
+                            drawerLayout.closeDrawers();
                             return true;
                         }
                         return false;
                     }
-                }
-        );
+                });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
